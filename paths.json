@@ -1,0 +1,23 @@
+{
+    "/": {
+        "get": {
+            "description": "Get 'Hello World!' message",
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Sample"
+                            },
+                            "example": {
+                                "id": 1,
+                                "name": "Hello World!"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

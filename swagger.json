@@ -1,0 +1,85 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My API",
+        "description": "This is a sample API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Hello Worldを返すエンドポイント",
+                "responses": {
+                    "200": {
+                        "description": "Hello Worldを返す",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "message": "Hello World!"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/endpoints": {
+            "get": {
+                "summary": "APIの全エンドポイントを返すエンドポイント",
+                "responses": {
+                    "200": {
+                        "description": "APIの全エンドポイントを返す",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "methods": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "path": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "example": [
+                                        {
+                                            "methods": [
+                                                "GET"
+                                            ],
+                                            "path": "/"
+                                        },
+                                        {
+                                            "methods": [
+                                                "GET"
+                                            ],
+                                            "path": "/endpoints"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
